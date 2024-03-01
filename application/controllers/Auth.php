@@ -24,7 +24,7 @@ class Auth extends CI_Controller
     }
     public function level()
     {
-        $data['title'] = 'Flvrrss Cafe';
+        $data['title'] = 'Flvrrss Resto';
         $this->load->view('auth/layout/head', $data);
         $this->load->view('auth/level');
         $this->load->view('auth/layout/footer');
