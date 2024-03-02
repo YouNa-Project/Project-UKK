@@ -55,15 +55,13 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Stok</label>
                                 <select class="form-control" id="exampleFormControlSelect1" name="stok">
-                                <?php
-            foreach ($ListStok as $key => $S) { ?>
-                <option value="<?= $S['stok'] ?>" <?= $mk['stok'] == $S['stok'] ? 'Selected' : '' ?>><?= $S['stok'] ?></option>
-            <?php } ?>
+                                <option <?php if ($mk['stok'] == "Tersedia") { ?>selected<?php } ?>>Tersedia</option>
+                                    <option <?php if ($mk['stok'] == "Tidak Tersedia") { ?>selected<?php } ?>>Tidak Tersedia</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="textarea-input" class=" form-control-label">Harga</label>
-                                <input value="<?= number_format($mk['harga'], 0, ',', '.') ?>" type="number" min="0" required class="form-control" name="harga" placeholder="Harga">
+                                <input value="<?= $mk['harga'] ?>" type="number" min="0" required class="form-control" name="harga" placeholder="Harga">
                             </div>
                             <div class="text-center mb-3">
                                 <a href="<?= base_url() ?>makanan" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
